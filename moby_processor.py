@@ -53,6 +53,14 @@ class ProcessingConfig:
     # Article numbers to watch (info articles)
     info_articles: list[str] = field(default_factory=list)
 
+    # Email recipients per alert type (fixed addresses)
+    float_recipients: list[str] = field(default_factory=list)
+    direct_recipients: list[str] = field(default_factory=list)
+    info_recipients: list[str] = field(default_factory=list)
+
+    # Sachbearbeiter code -> email address (dynamic recipient resolution)
+    employee_mapping: dict[str, str] = field(default_factory=dict)
+
 
 @dataclass
 class ProcessingResult:
